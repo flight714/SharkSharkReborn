@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Pieces/Fish.gd" type="Script" id=1]
+[ext_resource path="res://assets/AngelFish2.png" type="Texture" id=2]
+
+[node name="Fish" type="Area2D"]
+collision_mask = 15
+script = ExtResource( 1 )
+fish_color = Color( 0.909804, 0.960784, 0, 1 )
+sprite = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 1.1, 1.1 )
+hframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+
+[node name="AnimationTimer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="MovementTimer" type="Timer" parent="."]
+wait_time = 1.5
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+rect = Rect2( -1, -1, 2, 2 )
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+[connection signal="area_entered" from="." to="." method="_on_Fish_area_entered"]
+[connection signal="level_up" from="." to="." method="_on_Fish_level_up"]
+[connection signal="timeout" from="AnimationTimer" to="." method="_on_AnimationTimer_timeout"]
+[connection signal="timeout" from="MovementTimer" to="." method="_on_MovementTimer_timeout"]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]
