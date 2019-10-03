@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Pieces/Fish.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Seahorse.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 7.41519
+height = 2.45539
+
+[node name="Fish" instance=ExtResource( 1 )]
+scale = Vector2( 1.2, 1.2 )
+fish_size = 3
+max_size = 3
+max_speed = 67.0
+fish_color = Color( 0.490196, 0.494118, 0.47451, 1 )
+sprite = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+rotation = 0.0
+shape = SubResource( 1 )

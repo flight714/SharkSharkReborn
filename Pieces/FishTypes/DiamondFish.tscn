@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Pieces/Fish.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/DiamondFish.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="DiamondFish" instance=ExtResource( 1 )]
+scale = Vector2( 0.8, 0.8 )
+max_speed = 78.0
+acceleration = 160.0
+fish_color = Color( 0, 1, 0.858824, 1 )
+fish_alertness = 1.7
+move_damper = 0.02
+sprite = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )

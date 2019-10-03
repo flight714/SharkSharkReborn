@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Pieces/Fish.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/BlueFish.png" type="Texture" id=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+[node name="BlueFish" instance=ExtResource( 1 )]
+max_speed = 70.0
+acceleration = 180.0
+fish_color = Color( 0, 0.309804, 0.964706, 1 )
+fish_alertness = 1.9
+move_damper = 0.005
+sprite = ExtResource( 2 )
+
+[node name="Sprite" parent="." index="0"]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
