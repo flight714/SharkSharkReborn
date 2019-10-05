@@ -5,11 +5,11 @@
 [ext_resource path="res://assets/INTELLEC.TTF" type="DynamicFontData" id=3]
 [ext_resource path="res://ButtonTheme.tres" type="Theme" id=4]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 28
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 3 )
 
 [node name="MainMenu" type="Node2D"]
@@ -28,7 +28,7 @@ margin_left = 134.0
 margin_top = 227.0
 margin_right = 904.0
 margin_bottom = 277.0
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Shark Shark Reborn!"
 align = 1
@@ -39,8 +39,8 @@ margin_top = 157.0
 margin_right = 1283.0
 margin_bottom = 207.0
 theme = ExtResource( 4 )
-custom_fonts/font = SubResource( 2 )
-text = "A Please Don't Sue Me, Mattel Production"
+custom_fonts/font = SubResource( 1 )
+text = "A 'Please Don't Sue Me, Mattel' Production"
 align = 1
 
 [node name="CenterContainer" type="CenterContainer" parent="TextureRect"]
@@ -59,7 +59,7 @@ margin_bottom = 311.0
 margin_right = 122.0
 margin_bottom = 23.0
 theme = ExtResource( 4 )
-custom_fonts/font = SubResource( 1 )
+custom_fonts/font = SubResource( 2 )
 button_mask = 3
 text = "New Game"
 

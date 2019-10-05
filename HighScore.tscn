@@ -31,6 +31,7 @@ text = "0
 "
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+visible = false
 margin_left = 120.0
 margin_top = 40.0
 margin_right = 950.0
@@ -185,3 +186,12 @@ margin_right = 31.0
 margin_bottom = 521.0
 theme = ExtResource( 3 )
 text = "10"
+
+[node name="Button" type="Button" parent="TextureRect"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 70.0
+margin_bottom = 40.0
+theme = ExtResource( 3 )
+text = "Back!"
+[connection signal="pressed" from="TextureRect/Button" to="." method="_on_Button_pressed"]

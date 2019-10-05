@@ -13,12 +13,6 @@ func _ready():
 	load_scores()
 	
 	score_table = create_new_score_dict()
-	
-
-func _input(event):
-	if event.is_action_released("ui_accept"):
-		update_score_table()
-		switch_modes()
 
 func load_scores():
 	pass
@@ -31,10 +25,14 @@ func create_new_score_dict():
 	
 func update_score_table():
 	#var keys = score_table.keys()
-	var unsorted = score_table.values()
-	var sorted = unsorted.sort()
-	print(unsorted.sort())
+	var values = score_table.values()
+	values.sort()
+	print(values)
 	# need to insert new player score
+	
+	if values.size() > 20:
+		values.remove(0)
+
 	
 
 func switch_modes():
@@ -47,3 +45,6 @@ func switch_modes():
 	
 func set_score_box(label : Label, index : int, score : int):
 	label.text = str(index) + ": " + str(score)
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://MainMenu.tscn")
