@@ -217,7 +217,7 @@ func find_next_location():
 	
 	for f in get_tree().get_nodes_in_group("Fish"):
 		if f != self:
-			if pos.distance_to(to_local(f.position)) < (200 * (fish_size*0.5)):
+			if pos.distance_to(to_local(f.position)) < (100 * (fish_size*0.5)):
 				near_objects.append(f)
 	
 	if near_objects.size() > 0:

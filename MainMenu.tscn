@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://assets/SplashPageBlank.png" type="Texture" id=2]
+[ext_resource path="res://assets/INTELLEC.TTF" type="DynamicFontData" id=3]
+[ext_resource path="res://ButtonTheme.tres" type="Theme" id=4]
+
+[sub_resource type="DynamicFont" id=2]
+size = 28
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -4.0
+margin_top = -37.0
+margin_right = 1040.0
+margin_bottom = 633.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="GameTitle" type="Label" parent="TextureRect"]
+margin_left = 134.0
+margin_top = 227.0
+margin_right = 904.0
+margin_bottom = 277.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Shark Shark Reborn!"
+align = 1
+
+[node name="Label2" type="Label" parent="TextureRect"]
+margin_left = -236.0
+margin_top = 157.0
+margin_right = 1283.0
+margin_bottom = 207.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 2 )
+text = "A Please Don't Sue Me, Mattel Production"
+align = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="TextureRect"]
+margin_left = 4.0
+margin_top = 37.0
+margin_right = 1038.0
+margin_bottom = 637.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/CenterContainer"]
+margin_left = 456.0
+margin_top = 288.0
+margin_right = 578.0
+margin_bottom = 311.0
+
+[node name="Button" type="Button" parent="TextureRect/CenterContainer/VBoxContainer"]
+margin_right = 122.0
+margin_bottom = 23.0
+theme = ExtResource( 4 )
+custom_fonts/font = SubResource( 1 )
+button_mask = 3
+text = "New Game"
+
+[node name="StartTween" type="Tween" parent="."]
+[connection signal="pressed" from="TextureRect/CenterContainer/VBoxContainer/Button" to="." method="_on_Button_pressed"]
