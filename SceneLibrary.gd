@@ -33,6 +33,9 @@ var lobster = preload("res://Pieces/FishTypes/Lobster.tscn")
 
 var fish_type_array : Array
 
+var current_player_score = 0
+var high_score_scene = preload("res://HighScore.tscn")
+
 func _ready():
 	fish_type_array = fish_libary_standard.keys()
 	randomize()
@@ -82,3 +85,7 @@ func get_random_fish_at_range(min_level=1, max_level=5):
 	var rng = RandomNumberGenerator.new()
 	rng.randomize()
 	return get_random_fish_at_level(rng.randi_range(min_level, max_level))
+	
+func go_to_high_score(score):
+	current_player_score = score
+	get_tree().change_scene("res://HighScore.tscn")

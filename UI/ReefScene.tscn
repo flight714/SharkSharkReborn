@@ -98,7 +98,7 @@ margin_right = 56.856
 margin_bottom = 0.799999
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.921569, 1, 0, 1 )
-text = "Lives Label"
+text = "0"
 
 [node name="ScoreLabel" type="Label" parent="."]
 anchor_left = 0.732

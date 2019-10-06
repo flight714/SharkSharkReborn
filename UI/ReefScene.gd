@@ -8,6 +8,8 @@ onready var bubbles = $Reef/Bubbles
 var player_one_score = 0
 var player_one_lives = 5
 
+var player_is_dead = false
+
 var crustacean_y_position
 
 var crustaceans = []
@@ -38,6 +40,11 @@ func _ready():
 	setup_spawn_points()
 	#$NewSharkTimer.start()
 	setup_playing_field()
+	
+func _input(event):
+	if event.is_action_released("player_one_action") or event.is_action_released("player_two_action"):
+		if player_is_dead == true:
+			SceneLibrary.go_to_high_score(player_one_score)
 
 # warning-ignore:unused_argument
 func _process(delta):
@@ -202,6 +209,8 @@ func resolve_player_death():
 	else:
 		end_scene()
 		$GameOverLabel.show()
+		yield(get_tree().create_timer(1.5), "timeout")
+		player_is_dead = true
 
 func setup_spawn_points():
 	var next_point = Vector2(-100, get_viewport().size.y -30)

@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="SharkSharkClone"
-run/main_scene="res://UI/ReefScene.tscn"
+run/main_scene="res://MainMenu.tscn"
 boot_splash/image="res://assets/SplashPageBlank.png"
 boot_splash/bg_color=Color( 0, 0.0313726, 0.819608, 1 )
 config/icon="res://icon.png"
